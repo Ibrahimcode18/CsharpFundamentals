@@ -18,3 +18,14 @@ Console.WriteLine(a / b);
 decimal c = 1.0M;
 decimal d = 3.0M;
 Console.WriteLine(c / d);
+
+int yt = 7;
+int ba = 5;
+
+if (yt + ba > 10)
+{
+    Console.WriteLine("Yes it is");
+} else
+{
+    Console.WriteLine("Try again mate");
+}
