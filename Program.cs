@@ -46,3 +46,10 @@ for (int i = 0; i < 8; i++)
 {
     Console.WriteLine(i);
 }
+
+// Lists
+List<string> names = ["<name>", "Ana", "Felipe"];
+foreach (var name in names)
+{
+    Console.WriteLine($"Hello {name.ToUpper()}!");
+}
