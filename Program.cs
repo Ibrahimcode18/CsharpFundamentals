@@ -60,3 +60,21 @@ foreach (var name in namew)
 {
     Console.WriteLine($"Hello {name}!");
 }
+
+//LINQ
+// Specify the data source.
+int[] scores = [97, 92, 81, 60]; //[] represents an array
+
+// Define the query expression.
+IEnumerable<int> scoreQuery =
+    from score in scores
+    where score > 80
+    select score;
+
+// Execute the query.
+foreach (var i in scoreQuery)
+{
+    Console.Write(i + " ");
+}
+
+// Output: 97 92 81
