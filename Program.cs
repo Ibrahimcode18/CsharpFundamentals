@@ -25,7 +25,24 @@ int ba = 5;
 if (yt + ba > 10)
 {
     Console.WriteLine("Yes it is");
+} else if (yt + ba == 10)
+{
+    Console.WriteLine("It is equal to 10");
 } else
 {
     Console.WriteLine("Try again mate");
+}
+
+
+// loops
+int x = 3;
+while (3 > x)
+{
+    Console.WriteLine("3 is greater");
+    x++;
+}
+
+for (int i = 0; i < 8; i++)
+{
+    Console.WriteLine(i);
 }
