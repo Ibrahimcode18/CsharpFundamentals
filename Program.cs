@@ -55,3 +55,8 @@ foreach (var name in names)
 }
 
 var namew = new List<string>{"John", "Jane", "Doe"};
+namew.Sort();
+foreach (var name in namew)
+{
+    Console.WriteLine($"Hello {name}!");
+}
