@@ -53,3 +53,5 @@ foreach (var name in names)
 {
     Console.WriteLine($"Hello {name.ToUpper()}!");
 }
+
+var namew = new List<string>{"John", "Jane", "Doe"};
