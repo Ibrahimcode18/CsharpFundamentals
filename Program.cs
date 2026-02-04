@@ -1,4 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.X509Certificates;
+
 Console.WriteLine("Hello, World!");
 
 
@@ -8,8 +11,8 @@ int number2 = 2100000000;
 long total = (long)number1 + (long)number2;
 Console.WriteLine(total);
 
-float number3 = 4.51F; // F is needed for explicit declaration
-double number4 = 3.23; // The original datatype of decimal numbers is double,that is why d is not needed here
+//float number3 = 4.51F; // F is needed for explicit declaration
+//double number4 = 3.23; // The original datatype of decimal numbers is double,that is why d is not needed here
 
 double a = 1.0;
 double b = 3.0;
@@ -91,9 +94,65 @@ Console.WriteLine($"Car model: {car1.Model}, Car name: {car1.Name}");
 Car car2 = new Car("Honda", "Civic");
 Console.WriteLine($"Car model: {car2.Model}, Car name: {car2.Name}");
 
+List<Car> cars = [car1,car2];
+Console.WriteLine(cars.Count);
+
+///////////////////////////////////////////////////////////////
+Person person1 = new Person("Alice", "Smith");
+person1.pets.Add(new Cat("Bally"));
+person1.pets.Add(new Dog("Rex"));
+
+Person person2 = new Person("Bob", "Johnson");
+person2.pets.Add(new Dog("Boosky"));
+
+List<Person> people = [person1,person2];
+
+foreach (var person in people)
+{
+    Console.WriteLine($"{person}:");
+    foreach (var pet in person.pets)
+    {
+        Console.WriteLine($"{pet} makes sound {pet.makenoise()}");
+    }
+}
+
 public class Car(string model, string name)
 {
     public string Model { get; } = model;
     public string Name { get; } = name;
 }
 
+
+public class Person(string firstname, string lastname)
+{
+    public string First {get;} = firstname;
+    public string Last {get;} = lastname;
+    public List<Pet> pets {get;} = new();
+    public override string ToString()
+    {
+        return $"{First} {Last}";
+    }
+}
+
+
+public abstract class Pet(string name)
+{
+    public string Petname {get;} = name;
+    public abstract string makenoise();
+    public override string ToString()
+    {
+        return $"{Petname} and i am a {GetType().Name}";
+    }
+}
+
+public class Cat(string name) : Pet(name)
+{
+    public string Firstname {get;} = name;
+    public override string makenoise() => "Meow";
+}
+
+public class Dog(string name) : Pet(name)
+{
+    public string Firstname {get;} = name;
+    public override string makenoise() => "Bark";
+}
