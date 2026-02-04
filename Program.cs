@@ -69,7 +69,10 @@ int[] scores = [97, 92, 81, 60]; //[] represents an array
 IEnumerable<int> scoreQuery =
     from score in scores
     where score > 80
+    orderby score descending
     select score;
+
+var scorequery2 = scores.Where(score => score > 80).OrderByDescending(score => score);
 
 // Execute the query.
 foreach (var i in scoreQuery)
@@ -78,3 +81,19 @@ foreach (var i in scoreQuery)
 }
 
 // Output: 97 92 81
+
+
+//OOP
+
+Car car1 = new Car("Toyota", "Corolla");
+Console.WriteLine($"Car model: {car1.Model}, Car name: {car1.Name}");
+
+Car car2 = new Car("Honda", "Civic");
+Console.WriteLine($"Car model: {car2.Model}, Car name: {car2.Name}");
+
+public class Car(string model, string name)
+{
+    public string Model { get; } = model;
+    public string Name { get; } = name;
+}
+
